@@ -156,6 +156,8 @@ def process_data(test=False):
     print(f'found: {num_rows - missing_count} ({(num_rows - missing_count) / num_rows * 100}%)')
     print(f'total: {num_rows}')
 
+    return processed_data
+
 if __name__ == '__main__':
     # Test is true if no argument is passed or if the first argument is not '--prod'.
     test = len(sys.argv) < 2 or sys.argv[1] != '--prod'
