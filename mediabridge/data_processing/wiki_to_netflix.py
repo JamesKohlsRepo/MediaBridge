@@ -5,12 +5,14 @@ import time
 from tqdm import tqdm
 import sys
 from db.insert_data import insert_into_mongo
+from constants import *
 
 class WikidataServiceTimeoutException(Exception):
     pass
 
-data_dir = os.path.join(os.path.dirname(__file__), '../../data')
-out_dir = os.path.join(os.path.dirname(__file__), '../../out')
+# data_dir = os.path.join(os.path.dirname(__file__), '../../data')
+# out_dir = os.path.join(os.path.dirname(__file__), '../../out')
+
 user_agent = 'Noisebridge MovieBot 0.0.1/Audiodude <audiodude@gmail.com>'
 
 # Reading netflix text file
@@ -138,9 +140,9 @@ def process_data(test=False):
     missing_count = 0
     processed_data = []
 
-    netflix_data = read_netflix_txt(os.path.join(data_dir, 'movie_titles.txt'), test)
+    netflix_data = read_netflix_txt(os.path.join(DATA_DIR, 'movie_titles.txt'), test)
 
-    netflix_csv = os.path.join(out_dir, 'movie_titles.csv')
+    netflix_csv = os.path.join(OUT_DIR, 'movie_titles.csv')
 
     wiki_movie_ids_list, wiki_genres_list, wiki_directors_list = wiki_query(netflix_data, user_agent)
 
