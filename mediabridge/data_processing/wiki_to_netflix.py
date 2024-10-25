@@ -10,9 +10,6 @@ from constants import *
 class WikidataServiceTimeoutException(Exception):
     pass
 
-# data_dir = os.path.join(os.path.dirname(__file__), '../../data')
-# out_dir = os.path.join(os.path.dirname(__file__), '../../out')
-
 user_agent = 'Noisebridge MovieBot 0.0.1/Audiodude <audiodude@gmail.com>'
 
 # Reading netflix text file
