@@ -96,7 +96,7 @@ def wiki_query(data_csv, user_agent):
     wiki_directors = []
         
     for row in tqdm(data_csv):
-      if row[1] is None:
+        if row[1] is None:
             continue
           
       if '"' in row[2]:
